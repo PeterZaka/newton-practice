@@ -1,2 +1,2 @@
 # newton-practice
-Practice repoistory for 2026 Berkeley Statistics Compute Workshop
+Practice repository for 2026 Berkeley Statistics Compute Workshop
