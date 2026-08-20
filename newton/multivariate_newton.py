@@ -1,7 +1,7 @@
 import numpy as np
 import numdifftools as nd
 
-def f(x):
+def multi_f(x):
     return x[0]**2 + 3*x[0]*(x[1] - 10) + 5*(x[1] - 10)**2
 
 
@@ -17,7 +17,7 @@ def iterate_step(f, x):
     return x - np.matmul(inverse_hessian, gradient)
 
 
-def optimize(f, x0, eps=1e-10):
+def multi_optimize(f, x0, eps=1e-10):
     """
     Uses multivariate Newton's method to find min or max point near x0 for function f, with eps
 
@@ -42,4 +42,4 @@ def optimize(f, x0, eps=1e-10):
 
     return x
 
-print(optimize(f, [30, 20]))
+# print(optimize(f, [30, 20]))
