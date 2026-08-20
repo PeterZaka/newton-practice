@@ -1,5 +1,6 @@
-import numpy as np
 import numdifftools as nd
+import numpy as np
+
 
 def multi_f(x):
     return x[0]**2 + 3*x[0]*(x[1] - 10) + 5*(x[1] - 10)**2
@@ -8,9 +9,9 @@ def multi_f(x):
 def iterate_step(f, x):
     hessian_func = nd.Hessian(f)
     hessian_matrix = hessian_func(x)
-    
+
     inverse_hessian = np.linalg.inv(hessian_matrix)
-    
+
     grad_func = nd.Gradient(f)
     gradient = grad_func(x)
 
@@ -30,7 +31,7 @@ def multi_optimize(f, x0, eps=1e-10):
     """
     if eps < 0:
         raise ValueError("`eps` must be positive")
-    
+
     x = np.array(x0)
     dist = eps
     while abs(dist) >= eps:
